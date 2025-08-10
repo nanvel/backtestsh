@@ -1,0 +1,38 @@
+[project]
+name = "backtestsh"
+version = "0.1.0"
+description = "Generate cipher-bt strategies from user prompt using LLM."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.62.0",
+    "black>=25.1.0",
+    "cipher-bt[talib,yfinance]>=0.6.3",
+    "isort>=6.0.1",
+    "python-dotenv>=1.1.1",
+    "rich>=14.1.0",
+    "typer>=0.16.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+btsh = "app.cli:app"
+
+[tool.isort]
+profile = "black"
+line_length = 120
+known_first_party = ["cipher"]
+
+[tool.black]
+line-length = 120
