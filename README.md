@@ -14,3 +14,7 @@ Requires ANTHROPIC_API_KEY:
 export ANTHROPIC_API_KEY=...
 ```
 or use `.env` file.
+
+## Demo
+
+![Demo](https://github.com/nanvel/backtestsh/releases/download/0.1.0/backtestsh.gif)
